@@ -1,0 +1,73 @@
+# This file is to automatically configure your environment. It allows you to
+# run the code with a single command without having to install anything
+# (extra).
+
+# First run: conda env create --file environment.yml
+# If you change this file, run: conda env update --file environment.yml
+
+# Conda configuration settings. (Specify which modules/packages are installed.)
+name: mag2torrent
+channels:
+  - conda-forge
+dependencies:
+# Specify specific python version.
+  - python=3.10
+  - pip
+  - pip:
+# Install pre-commit check packages:
+# Turns relative import paths into absolute import paths.
+    - absolufy-imports
+# Auto format Python code to make it flake8 compliant.
+    - autoflake
+# Scan Python code for security issues.
+    - bandit
+# Code formatting compliance.
+    - black
+# Correct code misspellings.
+    - codespell
+# Verify percentage of code that has at least 1 test.
+    - coverage
+# Auto formats the Python documentation written in the code.
+    - docformatter
+# Auto generate docstrings.
+    - flake8
+# Auto sort the import statements.
+    - isort
+# Auto format Markdown files.
+    - mdformat
+# Auto check static typing.
+    - mypy
+# Auto generate documentation.
+    - pdoc3
+# Auto check programming style aspects.
+    - pylint
+# Auto generate docstrings.
+    - pyment
+# Identify and remove dead code.
+    - vulture
+# Include GitHub pre-commit hook.
+    - pre-commit
+# TODO: identify exact function(and usage).
+# Seems to be an autoformatter like black, but installed using npm instead of pip.
+    - prettier
+# Automatically upgrades Python syntax to the new Python version syntax.
+    - pyupgrade
+# Another static type checker for python like mypy.
+    - pyright
+
+# Install static typing packages used for code:
+    - types-requests
+    - types-cachetools
+# Install pip packages used for code:
+    #- argumentparser
+    - libtorrent
+    - watchdog
+    #- coloredlogs
+    - python-decouple
+    - requests
+    #- Flask
+    #- python-dotenv
+    #- waitress
+    - cachetools
+    #- Flask-Login
+    #- transmission-rpc
